@@ -1,3 +1,5 @@
+drop database hospital
+
 create database hospital
 
 use hospital
@@ -14,11 +16,12 @@ especialidade varchar(50)
 create table paciente(
 id_paciente int primary key auto_increment,
 nome varchar(100),
-cpf int,
+cpf varchar(20),
 telefone varchar (20),
-convenio int,
-historico varchar (250)
-
+convenio varchar(50),
+email varchar(100),
+historico varchar (250),
+senha varchar (50)
 );
 
 
@@ -53,28 +56,29 @@ foreign key (id_paciente) references paciente(id_paciente)
 
 
 -- paciente 
-INSERT INTO paciente (nome, cpf, telefone, convenio, historico)
- VALUES
-('Ana Pereira', '054.736.265-65', '(11) 98888-1111', 'Unimed', 'Hipertensa desde 2015. Usa losartana 50mg/dia. Controle irregular da pressão. Alergia a penicilina. Última consulta cardiologia 02/2024.'),
-('João Souza', '513.735.389-45', '(21) 97777-2222', 'Bradesco Saúde', 'Diabético tipo 2. Usa metformina 850mg 2x/dia. Histórico de neuropatia periférica leve. Ex-fumante. Consulta endocrino 01/2025.'),
-('Maria Santos', '372.914.058-32', '(31) 96666-3333', 'SUS', 'Asma intermitente. Usa salbutamol quando necessário. Internação por crise asmática em 2019. Sem outras comorbidades.'),
-('Carlos Lima', '198.204.670-88', '(41) 95555-4444', 'Allianz', 'Pós-operatório de colecistectomia 2020. Dislipidemia controlada com sinvastatina 20mg à noite. Sem sintomas atuais.'),
-('Beatriz Oliveira', '741.359.820-12', '(51) 94444-5555', 'Amil', 'Depressão em tratamento com sertralina 50mg/dia. Queixa de insônia leve. Acompanhamento psiquiátrico regular.'),
-('Ricardo Almeida', '629.180.443-09', '(71) 93333-6666', 'NotreDame', 'Infarto em 2018 com colocação de stent. Usa aspirina 100mg e atorvastatina. Faz caminhadas regulares e dieta controlada.'),
-('Juliana Costa', '287.460.915-77', '(85) 92222-7777', 'Prevent Senior', 'G2P1, cesárea em 2017. História de anemia ferropriva leve. Suplementação de ferro conforme orientação médica.'),
-('Pedro Martins', '905.671.332-50', '(61) 91111-8888', 'SulAmérica', 'Dor lombar crônica. Realizou fisioterapia em 2023. Evita AINEs por gastrite. Faz alongamentos diários.'),
-('Fernanda Ramos', '413.592.208-21', '(27) 98800-1234', 'Unimed', 'Hipotireoidismo controlado com levotiroxina 75mcg/dia. TSH normal. Sem alergias conhecidas. Avaliação anual.'),
-('Luiz Henrique', '056.823.497-36', '(62) 97700-4321', 'SUS', 'Tabagista ativo com tosse crônica. Solicitada radiografia de tórax. Orientado a cessar tabagismo e retorno em 3 meses.'),
-('Mariana Freitas', '330.417.665-04', '(19) 96655-1212', 'Bradesco Saúde', 'Alergia a sulfonamidas. Cirurgia de apendicite em 2010. Exames ginecológicos atualizados. Sem queixas atuais.'),
-('Gustavo Ribeiro', '880.210.334-11', '(48) 95544-2121', 'Amil', 'Obesidade grau I. Em reeducação alimentar e prática de atividade física. Avaliação nutricional agendada.'),
-('Clara Nascimento', '219.334.881-66', '(11) 98822-3344', 'Unimed', 'Migrânea com aura. Usa propranolol 40mg à noite. Crises mensais controladas com triptanos. Evita cafeína.'),
-('Diego Barbosa', '447.901.550-98', '(31) 97711-5566', 'Allianz', 'Lesão esportiva no joelho direito. Suspeita de menisco. Aguardando ressonância e avaliação ortopédica.'),
-('Patrícia Moreira', '553.778.220-13', '(41) 98833-6677', 'SulAmérica', 'Diabetes gestacional em acompanhamento. Em dieta controlada e monitorização glicêmica. Sem uso de insulina.'),
-('Eduardo Menezes', '702.114.399-27', '(51) 94411-2233', 'NotreDame', 'Hipertenso controlado com enalapril 10mg/dia. Exames laboratoriais normais. Orientado reduzir sal e manter atividade física.'),
-('Aline Castro', '618.455.003-40', '(71) 99988-0011', 'Prevent Senior', 'Rosácea leve. Uso tópico de metronidazol 0,75%. Evita exposição solar e produtos oleosos. Sem outras queixas.'),
-('Rafael Gonçalves', '365.220.874-52', '(85) 98855-4433', 'Amil', 'Alergia a frutos do mar. Episódio prévio de angioedema. Porta adrenalina prescrita. Evita crustáceos e moluscos.'),
-('Sofia Teixeira', '940.667.121-84', '(61) 97777-0002', 'Bradesco Saúde', 'Artrite reumatoide em remissão parcial. Usa metotrexato semanal. Acompanhamento reumatológico sem intercorrências.'),
-('Marcelo Lima', '101.233.554-29', '(62) 98866-2244', 'SUS', 'Hipertenso e fumante. Não faz uso regular de medicação. Orientado sobre adesão e mudança de estilo de vida.');
+INSERT INTO paciente (nome, email, senha, cpf, telefone, convenio, historico) VALUES
+('Ana Pereira', 'ana.pereira@gmail.com', 'senha123', '054.736.265-65', '(11) 98888-1111', 'Unimed', 'Hipertensa desde 2015. Usa losartana 50mg/dia. Controle irregular da pressão. Alergia a penicilina.'),
+('João Souza', 'joao.souza@gmail.com', 'jsouza2024', '513.735.389-45', '(21) 97777-2222', 'Bradesco Saúde', 'Diabético tipo 2. Usa metformina 850mg 2x/dia. Histórico de neuropatia periférica leve. Ex-fumante.'),
+('Maria Santos', 'maria.santos@gmail.com', 'maria123', '372.914.058-32', '(31) 96666-3333', 'SUS', 'Asma intermitente. Usa salbutamol quando necessário. Internação por crise asmática em 2019.'),
+('Carlos Lima', 'carlos.lima@gmail.com', 'carlos2025', '198.204.670-88', '(41) 95555-4444', 'Allianz', 'Pós-operatório de colecistectomia 2020. Dislipidemia controlada com sinvastatina 20mg.'),
+('Beatriz Oliveira', 'beatriz.oliveira@gmail.com', 'btrz@2024', '741.359.820-12', '(51) 94444-5555', 'Amil', 'Depressão em tratamento com sertralina 50mg/dia. Queixa de insônia leve.'),
+('Ricardo Almeida', 'ricardo.almeida@gmail.com', 'ric12345', '629.180.443-09', '(71) 93333-6666', 'NotreDame', 'Infarto em 2018 com colocação de stent. Usa aspirina e atorvastatina.'),
+('Juliana Costa', 'juliana.costa@gmail.com', 'juliana2025', '287.460.915-77', '(85) 92222-7777', 'Prevent Senior', 'G2P1, cesárea em 2017. História de anemia ferropriva leve.'),
+('Pedro Martins', 'pedro.martins@gmail.com', 'pmartins@123', '905.671.332-50', '(61) 91111-8888', 'SulAmérica', 'Dor lombar crônica. Realizou fisioterapia em 2023.'),
+('Fernanda Ramos', 'fernanda.ramos@gmail.com', 'framos2024', '413.592.208-21', '(27) 98800-1234', 'Unimed', 'Hipotireoidismo controlado com levotiroxina 75mcg/dia.'),
+('Luiz Henrique', 'luiz.henrique@gmail.com', 'luiz@senha', '056.823.497-36', '(62) 97700-4321', 'SUS', 'Tabagista ativo com tosse crônica. Solicitada radiografia de tórax.'),
+('Mariana Freitas', 'mariana.freitas@gmail.com', 'mfreitas2025', '330.417.665-04', '(19) 96655-1212', 'Bradesco Saúde', 'Alergia a sulfonamidas. Cirurgia de apendicite em 2010.'),
+('Gustavo Ribeiro', 'gustavo.ribeiro@gmail.com', 'gribeiro@1', '880.210.334-11', '(48) 95544-2121', 'Amil', 'Obesidade grau I. Em reeducação alimentar e atividade física.'),
+('Clara Nascimento', 'clara.nascimento@gmail.com', 'clara@2025', '219.334.881-66', '(11) 98822-3344', 'Unimed', 'Migrânea com aura. Usa propranolol 40mg à noite.'),
+('Diego Barbosa', 'diego.barbosa@gmail.com', 'dbarbosa123', '447.901.550-98', '(31) 97711-5566', 'Allianz', 'Lesão esportiva no joelho direito. Aguardando ressonância.'),
+('Patrícia Moreira', 'patricia.moreira@gmail.com', 'pati2025', '553.778.220-13', '(41) 98833-6677', 'SulAmérica', 'Diabetes gestacional em acompanhamento. Dieta controlada.'),
+('Eduardo Menezes', 'eduardo.menezes@gmail.com', 'edu@2024', '702.114.399-27', '(51) 94411-2233', 'NotreDame', 'Hipertenso controlado com enalapril 10mg/dia.'),
+('Aline Castro', 'aline.castro@gmail.com', 'alinecastro', '618.455.003-40', '(71) 99988-0011', 'Prevent Senior', 'Rosácea leve. Uso tópico de metronidazol 0,75%.'),
+('Rafael Gonçalves', 'rafael.goncalves@gmail.com', 'rafael@123', '365.220.874-52', '(85) 98855-4433', 'Amil', 'Alergia a frutos do mar. Porta adrenalina prescrita.'),
+('Sofia Teixeira', 'sofia.teixeira@gmail.com', 'sofiateixeira', '940.667.121-84', '(61) 97777-0002', 'Bradesco Saúde', 'Artrite reumatoide em remissão parcial. Usa metotrexato.'),
+('Marcelo Lima', 'marcelo.lima@gmail.com', 'marcelo2025', '101.233.554-29', '(62) 98866-2244', 'SUS', 'Hipertenso e fumante. Orientado sobre adesão ao tratamento.');
+
+
 
 
 -- medico 
@@ -142,6 +146,9 @@ VALUES
 (6, 18, '2025-10-28 09:40:00', 'Alergologia'),
 (12, 19, '2025-10-22 10:30:00', 'Reumatologia'),
 (5, 20, '2025-10-27 14:15:00', 'Clínico Geral');
+
+
+select * from paciente
 
 
 
