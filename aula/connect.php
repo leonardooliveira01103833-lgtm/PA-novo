@@ -1,4 +1,3 @@
-
 <?php
 
 
@@ -7,10 +6,6 @@ $user = "root";
 $password = "root";
 $database = "aula_php";
 $port = 3307;
-
-
-
-
 
 
 $conn = new mysqli($server,$user,$password,$database,$port);

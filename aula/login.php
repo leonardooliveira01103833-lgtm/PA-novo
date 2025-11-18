@@ -33,6 +33,8 @@
 
 
                 </div>
+                </div>
+                
 
       
 
@@ -45,21 +47,21 @@
 
                     </div>
 
-                    <div class="div4 flex arrumar coluna"><!--USUARIO-->
-                        <label for="text">Usuario</label>
-                        <input type="text" class="input" id="usuario">
+                    <div class="div4 flex arrumar coluna"><!--email-->
+                        <label for="text" placeholder="email">Email</label>
+                        <input type="text" name="email" class="input" id="usuario">
 
 
                     </div>
 
-                    <div class="div5 flex arrumar coluna"><!--EMAIL-->
+                    <div class="div5 flex arrumar coluna"><!--senha-->
                         <label for="text">Senha</label>
-                        <input type="text" class="input" id="senha">
+                        <input type="text" name="senha" class="input" id="senha">
 
                     </div>
                     <div class="div6 flex arrumar coluna"><!--SENHA-->
                         <label for="text">Confirmar senha</label>
-                        <input type="text" class="input" id="confirmarSenha">
+                        <input type="text" name="confirmaSenha" class="input" id="confirmarSenha">
 
 
                     </div>
