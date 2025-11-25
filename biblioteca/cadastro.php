@@ -43,7 +43,7 @@
                     <input type="submit">
                         
                       
-                    <a href="listar.php">Clique para ver a lista de livros</a>
+                    <a href="listar.php" class="cor">Clique para ver a lista de livros</a>
 
                     </div>
 

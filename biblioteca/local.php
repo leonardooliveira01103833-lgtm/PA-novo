@@ -9,4 +9,14 @@ $categoria = $_POST['categoria'];
 $quantidade = $_POST['quantidade'];
 
 $sql = "INSERT INTO livros(titulo, autor, ano, categoria, quantidade) VALUES ('$titulo', '$autor', '$ano', '$categoria', '$quantidade')";
-header("location:cadastro.php");
+
+
+if($conn->query($sql) === true){
+    echo "usuario cadrastrado com sucesso";
+    header("location:cadastro.php");
+}
+else{
+   echo "erro:" .$sql. "<br>" . $conn->error;
+}
+
+$conn->close();
