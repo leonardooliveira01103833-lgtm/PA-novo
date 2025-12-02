@@ -21,17 +21,19 @@
    
 }
 .div-1{
-    height: 300px;
-    width: 160px;
+    height: 400px;
+    width: 600px;
     margin-top: 120px;
     margin-right: 85px;
+    align-items: center;
+    justify-content:center;
     
 }
 
 .caixa-1{
     background-color:#26A69A;
-    height: 700px;
-    width: 600px;
+    height: 650px;
+    width: 800px;
     justify-self: left;
     flex-direction: column;
     margin: 120px;

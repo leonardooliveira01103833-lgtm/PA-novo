@@ -32,6 +32,7 @@
                         </label>
                         <label class="cor">Categoria:
                             <select name="categoria" id="" class="select">
+                                <option value="Selecione uma opção">Selecione uma opção</option>
                                 <option value="Drama">Drama</option>
                                 <option value="Terro">Terro</option>
                                 <option value="Ação">Ação</option>
